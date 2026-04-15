@@ -58,8 +58,10 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-
+        
+print(f"SAW MESSAGE | user={message.author.display_name} | channel={message.channel.id} | text={message.content!r}")
     source_lang = get_language_from_channel(message.channel.id)
+
     if source_lang is None:
         return
 
